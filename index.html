@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Github App Test</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <p>Hello World</p>
-    </body>
+
+<head>
+    <title>Fun Apps!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/lib/paper.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./src/lib/knockout.js"></script>
+</head>
+
+<body>
+    <nav class="border fixed split-nav">
+        <div class="nav-brand">
+            <h3><a href="#">Fun Apps!</a></h3>
+        </div>
+        <div class="collapsible">
+            <input id="collapsible1" type="checkbox" name="collapsible1">
+            <button>
+                <label for="collapsible1">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </label>
+            </button>
+            <div class="collapsible-body">
+                <ul class="inline">
+                    <li><a href="#">Arithmetic</a></li>
+                    <li><a href="#">Dates</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <div class="form-group">
+        <div class="row">
+            <label class="sm-1 col" data-bind="text: message" for="input1"></label>
+            <input class="sm-2 col" type="text" placeholder="placeholder" id="input1">
+        </div>
+        <div class="row">
+                <label class="sm-1 col" data-bind="text: message2" for="input1"></label>
+                <input class="sm-2 col" type="text" placeholder="placeholder" id="input1">
+        </div>
+        <div class="row">
+            <label class="sm-1 col" data-bind="text: message3" for="input1"></label>
+            <input class="sm-2 col" type="text" placeholder="placeholder" id="input1">
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>
