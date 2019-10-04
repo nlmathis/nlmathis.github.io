@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Title</title>
+        <link rel="shortcut icon" href="images/large-icon.png" type="image/x-icon">
+        <link rel="manifest" href="./manifest.json">
+        <script type="text/javascript" src="./lib/knockout.js"></script>
+    </head>
+    <body>
+        <label>Available Letters</label>
+        <input type="text" data-bind="textInput: availableLetters"/>
+        <label>Known Letters</label>
+        <input type="text" data-bind="textInput: guessedLetters" />
+        <label>Search Regex</label>
+        <span data-bind="text: guessedRegex"></span>
+        <ul data-bind="foreach: possibleAnswers">
+            <li data-bind="text: $data"></li>
+        </ul>
+
+
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>
