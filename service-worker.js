@@ -6,6 +6,7 @@ self.addEventListener('install', event => {
         caches.open(fileCacheName).then(function(cache) {
           return cache.addAll(
             [
+              'paper.css',
               '/images/small-icon.png',
               '/images/large-icon.png',
               '/index.html',
