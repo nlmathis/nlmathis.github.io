@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         guessedRegex: ko.pureComputed(function () {
             if(vm.availableLetters() && vm.availableLetters().length > 0 
             && vm.guessedLetters() && vm.guessedLetters().length > 0) {
-                let availableLetters = new Set(vm.availableLetters());
+                let availableLetters = new Set(vm.availableLetters().toLowerCase());
+                let guessedLetters = vm.guessedLetters().toLowerCase();
                 let availableRegex = `[ ${Array.from(availableLetters).join('')}]`;
-                return new RegExp(`^${vm.guessedLetters().replace(/-/g, availableRegex)}$`)
+                return new RegExp(`^${guessedLetters.replace(/-/g, availableRegex)}$`)
             }
             else {
                 return null;
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     vm.guessedRegex.subscribe(function (newValue) {
         if(newValue) {
-            worker.postMessage({ availableLetters: vm.availableLetters(), newValue: newValue});
+            worker.postMessage({ availableLetters: vm.availableLetters().toLowerCase(), newValue: newValue});
         }
         
     });
